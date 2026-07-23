@@ -14,7 +14,7 @@
       },
       "commerce-b2b-enabled": false,
       "commerce-companies-enabled": false,
-      "commerce-assets-enabled": true,
+      "commerce-assets-enabled": false,
       "adobe-commerce-optimizer": false,
       "analytics": {
         "base-currency-code": "USD",
@@ -23,7 +23,7 @@
         "store-code": "main_website_store",
         "store-id": "main_website_store",
         "store-name": "Default Store View",
-        "store-url": "https://coresaas-subgraph-external:8000/5DpVmwqQBgvsFf8PoAc9pR/",
+        "store-url": "https://main--will-cmrce--wac84s.aem.live",
         "store-view-code": "default",
         "store-view-id": "default",
         "store-view-name": "Default Store View",
