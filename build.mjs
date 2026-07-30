@@ -12,7 +12,8 @@ overrideGQLOperations([
     skipFragments: ['DOWNLOADABLE_ORDER_ITEMS_FRAGMENT'],
     operations: [],
   },
-  // Activity 2.1 — storefront build.mjs: PDP fragment extension (merge into overrideGQLOperations array)
+  // Activity 2.1 — storefront build.mjs: PDP fragment extension
+  // (merge into overrideGQLOperations array)
   // Replace custom_attribute_name with your attribute code.
   {
     npm: '@dropins/storefront-pdp',
@@ -21,19 +22,19 @@ overrideGQLOperations([
         metaTitle
       }`,
     ],
-  }
+  },
   // {
-  //   npm: '@dropins/storefront-checkout',
-  //   operations: [],
-  // },
+  //   npm: '@dropins/storefront-checkout'
+  //   operations: []
+  // }
   // {
-  //   npm: '@dropins/storefront-pdp',
+  //   npm: '@dropins/storefront-pdp'
   //   operations: [
   //     `
   //     fragment PRODUCT_FRAGMENT on ProductView {
   //       lowStock
   //     }
-  //     `,
-  //   ],
-  // },
+  //     `
+  //   ]
+  // }
 ]);

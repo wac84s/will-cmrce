@@ -144,35 +144,33 @@ export default async function decorate(block) {
   const $tagline = fragment.querySelector('.product-details__tagline');
   const $stock = fragment.querySelector('.product-details__stock');
   const $customAttribute = fragment.querySelector('.product-details__custom-attribute');
-  
+
   block.replaceChildren(fragment);
 
   if ($tagline) {
     $tagline.textContent = 'Free shipping on orders over $50';
   }
 
-    events.on('pdp/data', (product) => {
-      if (!product) return;
+  events.on('pdp/data', (pdpProduct) => {
+    if (!pdpProduct) return;
 
-      console.log("Activity 2.1",product)
-      
-      if (product.inStock) {
-        $stock.textContent = '● In Stock';
-        $stock.className = 'product-details__stock stock-badge stock-badge--in-stock';
-      } else {
-        $stock.textContent = '● Out of Stock';
-        $stock.className = 'product-details__stock stock-badge stock-badge--out-of-stock';
-      }
-      const value = product.metaTitle;
-      if (value) {
-        $customAttribute.innerHTML = `
+    if (pdpProduct.inStock) {
+      $stock.textContent = '● In Stock';
+      $stock.className = 'product-details__stock stock-badge stock-badge--in-stock';
+    } else {
+      $stock.textContent = '● Out of Stock';
+      $stock.className = 'product-details__stock stock-badge stock-badge--out-of-stock';
+    }
+    const value = pdpProduct.metaTitle;
+    if (value) {
+      $customAttribute.innerHTML = `
         <div class="custom-attribute">
         <dt>Custom Attribute Label</dt>
         <dd>${value}</dd>
         </div>
         `;
-      }
-    }, { eager: true });
+    }
+  }, { eager: true });
 
   const gallerySlots = {
     CarouselThumbnail: (ctx) => {
